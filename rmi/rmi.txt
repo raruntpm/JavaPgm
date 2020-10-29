@@ -1,0 +1,31 @@
+RMI - Remote Method Invocation :
+================================
+
+        * Used to distribute the class object through out the clients
+          connected in RemoteServer.
+
+        * Used to develop a intra-net application(Client-Server application).
+
+Architecture of RMI :
+---------------------
+
+ClassObject ---> Server ---> Skeleton --->  StubClass --->  Client
+
+
+Procedure for developing RMI Application :
+------------------------------------------
+ServerSide :
+------------
+
+1) Create a Remote interface which contains collection of member functions (remote methods) declaration those will be defined in Remote Class.
+2) Create a Remote class ,and inherit Remote interface & define all remote interface methods (javac remoteservlerclass.java)
+3) Create Stub & Skeleton classes for created Remote Class (Using rmic.exe syntax : rmic RemoteServerClassName)
+4) Start Remote Server (start rmiregistry.exe)
+5) Register the Remote class object into server (java remoteserverclass)
+
+
+Client Side :
+-------------
+6) Copy both Remote Interface and Stub class into client Machine from the server.
+7) Create Client Application & use remote server class object in  any client connected in a Remote Server.
+
